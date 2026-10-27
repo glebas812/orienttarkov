@@ -11,6 +11,12 @@ npm run dev
 
 Сборка: `npm run build`. Готовые файлы появляются в `dist/`.
 
+## GitHub Pages
+
+Нельзя публиковать исходный `index.html` напрямую: браузеру нужна собранная версия из `dist/`.
+
+В проекте есть workflow `.github/workflows/deploy.yml`. После его добавления в репозиторий откройте **Settings → Pages → Build and deployment** и выберите **Source: GitHub Actions**. При каждом push в `main` проект будет собираться и публиковаться автоматически. Относительный `base: "./"` в `vite.config.ts` позволяет сайту работать по адресу проекта `https://<имя>.github.io/<репозиторий>/`.
+
 ## Управление
 
 - **WASD / стрелки** — движение.
